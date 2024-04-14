@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="696.0" style="-fx-background-color: #aed6f1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shventurecapital.bebtea.controllers.UserController">
+   <children>
+      <AnchorPane prefHeight="323.0" prefWidth="696.0" style="-fx-background-color: #303b2d;">
+         <children>
+            <VBox layoutX="97.0" layoutY="41.0" prefHeight="229.0" prefWidth="246.0" spacing="11.0">
+               <children>
+                  <TextField fx:id="name" promptText="Name" style="-fx-background-color: #485045;" />
+                  <TextField fx:id="address" layoutX="10.0" layoutY="10.0" promptText="Address" style="-fx-background-color: #485045;" />
+                  <ChoiceBox fx:id="flavor" prefHeight="25.0" prefWidth="246.0" style="-fx-background-color: #485045;" />
+                  <TextField fx:id="quantity" promptText="Quantity" style="-fx-background-color: #485045;" />
+                  <RadioButton fx:id="rbSmall" layoutX="10.0" layoutY="150.0" mnemonicParsing="false" text="Small" textFill="#fcf8f8">
+                     <font>
+                        <Font name="Comic Sans MS" size="12.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="rbSize" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbMedium" mnemonicParsing="false" text="Medium" textFill="#fcf8f8" toggleGroup="$rbSize">
+                     <font>
+                        <Font name="Comic Sans MS" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="rbLarge" mnemonicParsing="false" selected="true" text="Large" textFill="#fcf8f8" toggleGroup="$rbSize">
+                     <font>
+                        <Font name="Comic Sans MS" size="12.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <effect>
+                  <Bloom threshold="1.0" />
+               </effect>
+            </VBox>
+            <Button fx:id="save" layoutX="186.0" layoutY="287.0" mnemonicParsing="false" onAction="#saveUser" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #f9ff7d;" text="Save" textFill="#070505" />
+            <ImageView fitHeight="266.0" fitWidth="298.0" layoutX="348.0" layoutY="33.0">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="userId" layoutX="193.0" layoutY="14.0" opacity="0.12" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="323.0" prefHeight="160.0" prefWidth="696.0" style="-fx-background-color: #6dd038;" />
+      <VBox layoutX="24.0" layoutY="44.0" prefHeight="183.0" prefWidth="63.0" spacing="14.0">
+         <children>
+            <Label text="Name" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Address" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Flavor" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Quantity" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Size" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <TableView fx:id="userTable" layoutX="15.0" layoutY="334.0" prefHeight="137.0" prefWidth="682.0" style="-fx-background-color: #ffe7c8;">
+        <columns>
+          <TableColumn fx:id="colName" prefWidth="132.0" text="Name" />
+          <TableColumn fx:id="colAddress" prefWidth="220.0" resizable="false" text="Address" />
+            <TableColumn fx:id="colFlavor" prefWidth="120.0" text="Flavor" />
+            <TableColumn fx:id="colQuantity" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="colSize" prefWidth="58.0" text="Size" />
+            <TableColumn fx:id="colAmount" prefWidth="75.0" text="Amount" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
